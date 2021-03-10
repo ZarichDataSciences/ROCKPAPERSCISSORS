@@ -18,9 +18,9 @@ namespace ROCKPAPERSCISSORS
             Console.WriteLine("Enter your name...");
 
 
-            Player myObj = new Player();
-            myObj.Name = Console.ReadLine();
-            //Console.WriteLine(myObj.Name);
+            Player playerName = new Player();
+            playerName.Name = Console.ReadLine();
+            //Console.WriteLine(playerNam e.Name);
 
             //Console.ReadLine();
             //Player = Console.ReadLine();
@@ -36,15 +36,15 @@ namespace ROCKPAPERSCISSORS
             int scoreCPU = 0;
 
 
-            while (scorePlayer <= 3 || scoreCPU <= 3) { 
+            while (scorePlayer < 3 && scoreCPU < 3) { 
                 
 
 
-            Console.WriteLine("Choose between ROCK, PAPER and SCISSORS! " + myObj.Name);
+            Console.WriteLine("Choose between ROCK, PAPER and SCISSORS! " + playerName.Name);
             inputPlayer = Console.ReadLine();
             inputPlayer = inputPlayer.ToUpper();
 
-                switch (randomInt)
+                switch (1)
                 {
 
 
@@ -140,7 +140,7 @@ namespace ROCKPAPERSCISSORS
 
             if (scoreCPU == 3)
             {
-                Console.WriteLine("Congrats! You LOST" + myObj.Name + "The CPU beat U!");
+                Console.WriteLine("Congrats! You LOST" + playerName.Name + "The CPU beat U!");
                 Console.ReadKey();
             }
             else if (scorePlayer == 3)
