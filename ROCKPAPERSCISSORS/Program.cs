@@ -26,8 +26,8 @@ namespace ROCKPAPERSCISSORS
             //Player = Console.ReadLine();
 
 
-
-            Random rnd = new Random();
+            Random rnd = new Random((int)DateTime.Now.Ticks);
+            //Random rnd = new Random();
 
             Player player1 = new Player();
             randomInt = rnd.Next(1, 4);
@@ -44,7 +44,7 @@ namespace ROCKPAPERSCISSORS
             inputPlayer = Console.ReadLine();
             inputPlayer = inputPlayer.ToUpper();
 
-                switch (1)
+                switch (randomInt)
                 {
 
 
@@ -145,7 +145,7 @@ namespace ROCKPAPERSCISSORS
             }
             else if (scorePlayer == 3)
             {
-                Console.WriteLine("poop");
+                Console.WriteLine("Congrats " + playerName.Name + ", you beat the Computer!");
                 Console.ReadKey();
             }
 
