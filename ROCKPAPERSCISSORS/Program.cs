@@ -90,7 +90,7 @@ namespace ROCKPAPERSCISSORS
                         }
                         else if (inputPlayer == "SCISSORS")
                         {
-                            Console.WriteLine("CPU WINS! \n\n");
+                            Console.WriteLine("COMPUTER WINS! \n\n");
 
                             scoreCPU++;
                             Console.WriteLine("Player Score " + scorePlayer);
@@ -117,7 +117,7 @@ namespace ROCKPAPERSCISSORS
                         }
                         else if (inputPlayer == "ROCK")
                         {
-                            Console.WriteLine("CPU WINS! \n\n");
+                            Console.WriteLine("COMPUTER WINS! \n\n");
                             scoreCPU++;
                             Console.WriteLine("Player Score " + scorePlayer);
                             Console.WriteLine("Computer Score " + scoreCPU);
@@ -142,7 +142,7 @@ namespace ROCKPAPERSCISSORS
                         }
                         else if (inputPlayer == "PAPER")
                         {
-                            Console.WriteLine("CPU WINS! \n\n");
+                            Console.WriteLine("COMPUTER WINS! \n\n");
                             scoreCPU++;
                             Console.WriteLine("Player Score " + scorePlayer);
                             Console.WriteLine("Computer Score " + scoreCPU);
@@ -163,7 +163,7 @@ namespace ROCKPAPERSCISSORS
 
             if (scoreCPU == 3)
             {
-                Console.WriteLine("Congrats! You LOST " + playerName.Name + ", The CPU beat U!");
+                Console.WriteLine("Congrats! You LOST " + playerName.Name + ", The CPU beat you!");
 
             }
             else if (scorePlayer == 3)
