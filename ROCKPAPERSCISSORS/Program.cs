@@ -20,36 +20,68 @@ namespace ROCKPAPERSCISSORS
 
             Player playerName = new Player();
             playerName.Name = Console.ReadLine();
-            //Console.WriteLine(playerNam e.Name);
 
-            //Console.ReadLine();
-            //Player = Console.ReadLine();
+            if (string.IsNullOrEmpty(playerName.Name))
+            {
+                Console.WriteLine("Name can't be empty! Input your name once more...");
+                playerName.Name = Console.ReadLine();
+            }
 
 
-            Random rnd = new Random((int)DateTime.Now.Ticks);
-            //Random rnd = new Random();
+            var seed = (int)DateTime.Now.Ticks;
+            var random = new Random(seed);
 
-            Player player1 = new Player();
-            randomInt = rnd.Next(1, 4);
+
+            //Player player1 = new Player();
+            //Now that we have the player's name the game begins withing a WHILE loop
 
             int scorePlayer = 0;
             int scoreCPU = 0;
 
 
-            while (scorePlayer < 3 && scoreCPU < 3) { 
-                
+            while (scorePlayer < 3 && scoreCPU < 3)
+            {
 
+                randomInt = random.Next(1, 4);
 
-            Console.WriteLine("Choose between ROCK, PAPER and SCISSORS! " + playerName.Name);
-            inputPlayer = Console.ReadLine();
-            inputPlayer = inputPlayer.ToUpper();
+                Console.WriteLine("Type ROCK, PAPER or SCISSORS " + playerName.Name + "!");
 
+                inputPlayer = Console.ReadLine();
+
+                inputPlayer = inputPlayer.ToUpper();
+
+                if (string.IsNullOrEmpty(inputPlayer))
+                {
+                    Console.WriteLine("You can't just press Enter. Type Rock, paper or scissors...");
+                    inputPlayer = Console.ReadLine();
+                    inputPlayer = inputPlayer.ToUpper();
+                }
+               
+                /*else if (inputPlayer != "ROCK")
+                {
+                    Console.WriteLine("You must type rock, paper or scissors. Try again!");
+                    inputPlayer = Console.ReadLine();
+                    inputPlayer = inputPlayer.ToUpper();
+                }
+                else if (inputPlayer != "PAPER")
+                {
+                    Console.WriteLine("You must type rock, paper or scissors. Try again!");
+                    inputPlayer = Console.ReadLine();
+                    inputPlayer = inputPlayer.ToUpper();
+                }
+                else if (inputPlayer != "SCISSORS")
+                {
+                    Console.WriteLine("You must type rock, paper or scissors. Try again!");
+                    inputPlayer = Console.ReadLine();
+                    inputPlayer = inputPlayer.ToUpper();
+                }
+                */
                 switch (randomInt)
                 {
 
 
                     case 1:
-                        //inputCPU = "ROCK";
+
                         Console.WriteLine("The computer chose ROCK");
 
                         if (inputPlayer == "ROCK")
@@ -74,11 +106,12 @@ namespace ROCKPAPERSCISSORS
                             scoreCPU++;
                             Console.WriteLine("Player Score " + scorePlayer);
                             Console.WriteLine("Computer Score " + scoreCPU);
-                        }
+                        }                        
+                                                
                         break;
 
                     case 2:
-                        //inputCPU = "PAPER";
+
                         Console.WriteLine("The computer chose PAPER");
                         if (inputPlayer == "PAPER")
                         {
@@ -103,8 +136,8 @@ namespace ROCKPAPERSCISSORS
                         break;
 
                     case 3:
-                        //inputCPU = "SCISSORS";
-                        Console.WriteLine("cThe computer chose SCISSORS");
+
+                        Console.WriteLine("The computer chose SCISSORS");
                         if (inputPlayer == "SCISSORS")
                         {
                             Console.WriteLine("DRAW! \n\n");
@@ -130,27 +163,31 @@ namespace ROCKPAPERSCISSORS
                     default:
                         Console.WriteLine("Misspelled entry? Please type rock, paper or scissors again.");
                         break;
-                        //Console.ReadKey();
+                        Console.ReadKey();
+
                 }
 
 
-            }  //(scoreCPU > 5);
+            }
 
 
 
             if (scoreCPU == 3)
             {
-                Console.WriteLine("Congrats! You LOST" + playerName.Name + "The CPU beat U!");
-                Console.ReadKey();
+                Console.WriteLine("Congrats! You LOST " + playerName.Name + ", The CPU beat U!");
+
             }
             else if (scorePlayer == 3)
             {
                 Console.WriteLine("Congrats " + playerName.Name + ", you beat the Computer!");
-                Console.ReadKey();
+
             }
 
-            Console.ReadLine();
+            Console.WriteLine("Thanks for playing! Press any key to quit");
+            Console.ReadKey();
+
         }
+
 
     }
 }
