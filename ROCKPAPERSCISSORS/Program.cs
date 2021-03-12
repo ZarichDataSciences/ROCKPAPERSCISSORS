@@ -57,25 +57,14 @@ namespace ROCKPAPERSCISSORS
                     inputPlayer = inputPlayer.ToUpper();
                 }
                
-                /*else if (inputPlayer != "ROCK")
+                else if ((inputPlayer != "ROCK") && (inputPlayer != "PAPER") && (inputPlayer != "SCISSORS"))
                 {
                     Console.WriteLine("You must type rock, paper or scissors. Try again!");
                     inputPlayer = Console.ReadLine();
                     inputPlayer = inputPlayer.ToUpper();
                 }
-                else if (inputPlayer != "PAPER")
-                {
-                    Console.WriteLine("You must type rock, paper or scissors. Try again!");
-                    inputPlayer = Console.ReadLine();
-                    inputPlayer = inputPlayer.ToUpper();
-                }
-                else if (inputPlayer != "SCISSORS")
-                {
-                    Console.WriteLine("You must type rock, paper or scissors. Try again!");
-                    inputPlayer = Console.ReadLine();
-                    inputPlayer = inputPlayer.ToUpper();
-                }
-                */
+                
+
                 switch (randomInt)
                 {
 
